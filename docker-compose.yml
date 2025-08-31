@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  orderdb:
+    image: postgres:16
+    container_name: orderdb
+    environment:
+      POSTGRES_USER: order
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: orderdb
+    ports:
+      - "5434:5432"
+
+  paymentdb:
+    image: postgres:16
+    container_name: paymentdb
+    environment:
+      POSTGRES_USER: payment
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: paymentdb
+    ports:
+      - "5435:5432"
