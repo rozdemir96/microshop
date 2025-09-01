@@ -1,4 +1,4 @@
-package com.microshop.order.constants;
+package com.microshop.common.constants;
 
 public enum OrderStatus {
     PENDING,

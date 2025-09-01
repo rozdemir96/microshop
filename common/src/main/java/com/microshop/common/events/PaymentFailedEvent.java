@@ -1,11 +1,7 @@
-package com.microshop.payment.entity;
+package com.microshop.common.events;
 
-import com.microshop.common.entity.BaseEntity;
 import com.microshop.common.constants.PaymentStatus;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.Table;
+import com.microshop.common.model.BaseModel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -13,13 +9,11 @@ import lombok.NoArgsConstructor;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
-@Entity
-@Table(name = "payments")
 @NoArgsConstructor
 @AllArgsConstructor
-public class Payment extends BaseEntity {
+public class PaymentFailedEvent extends BaseModel {
     private Long orderId;
     private Double amount;
-    @Enumerated(EnumType.STRING)
     private PaymentStatus status;
+    private String reason;
 }

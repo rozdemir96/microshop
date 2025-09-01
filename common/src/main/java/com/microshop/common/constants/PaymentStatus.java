@@ -1,4 +1,4 @@
-package com.microshop.payment.constants;
+package com.microshop.common.constants;
 
 public enum PaymentStatus {
     PENDING,

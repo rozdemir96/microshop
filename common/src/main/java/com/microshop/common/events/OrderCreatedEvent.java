@@ -1,4 +1,4 @@
-package com.microshop.order.model;
+package com.microshop.order.events;
 
 import com.microshop.common.model.BaseModel;
 import com.microshop.common.constants.OrderStatus;
@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
-public class OrderModel extends BaseModel {
+public class OrderCreatedEvent extends BaseModel {
     private Long customerId;
     private Double totalAmount;
     private OrderStatus status;

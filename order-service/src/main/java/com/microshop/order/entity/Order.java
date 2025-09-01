@@ -1,7 +1,7 @@
 package com.microshop.order.entity;
 
 import com.microshop.common.entity.BaseEntity;
-import com.microshop.order.constants.OrderStatus;
+import com.microshop.common.constants.OrderStatus;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;

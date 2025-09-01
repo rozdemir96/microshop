@@ -1,7 +1,7 @@
 package com.microshop.payment.model;
 
 import com.microshop.common.model.BaseModel;
-import com.microshop.payment.constants.PaymentStatus;
+import com.microshop.common.constants.PaymentStatus;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

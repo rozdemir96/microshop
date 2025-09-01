@@ -11,6 +11,24 @@ spring:
       ddl-auto: none
   liquibase:
     change-log: classpath:db/changelog/db.changelog-master.xml
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    properties:
+      spring.json.add.type.headers: false
+      spring.json.trusted.packages: "com.microshop.order.events, com.microshop.common.events"
+      spring.json.value.default.type: com.microshop.common.events.PaymentProcessedEvent
+    topics:
+      order-created: order-created-topic
+      payment-processed: payment-processed-topic
+      payment-failed: payment-failed-topic
+    consumer:
+      group-id: order-service-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
 
 server:
   port: 8083
